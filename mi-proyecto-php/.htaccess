@@ -1,0 +1,7 @@
+RewriteEngine On
+RewriteBase /
+
+# Permitir acceso directo a archivos en public/assets
+RewriteCond %{REQUEST_URI} !^/public/assets/
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$ index.php [QSA,L]
